@@ -1,0 +1,48 @@
+server:  
+  port: 8080
+
+
+#激活哪一个环境的配置文件，默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
+#
+#开发环境配置：profiles: dev
+#测试环境配置：profiles: test
+#生产环境配置：profiles: prod
+#
+#如果配置多个环境的配置，需在配置文件下添加三个英文状态下的短横线即可区分
+#
+#激活环境配置文件，并设置公共配置
+spring:
+  profiles:
+    active: dev
+
+---
+
+#开发配置
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: admini
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+---
+
+#公共配置与profiles选择无关, mapperLocations指的路径是src/main/resources
+mybatis:
+  typeAliasesPackage: com.xh.springboot.model
+  mapperLocations: classpath:mapper/*.xml
