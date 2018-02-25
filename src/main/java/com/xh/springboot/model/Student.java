@@ -11,7 +11,7 @@ package com.xh.springboot.model;
 public class Student {
 
 	private Integer id;
-	private Teacher teacher;
+	private Integer teacher;
 	private String name;
 	private Integer age;
 	private Integer sex;
@@ -25,11 +25,11 @@ public class Student {
 		this.id = id;
 	}
 
-	public Teacher getTeacher() {
+	public Integer getTeacher() {
 		return teacher;
 	}
 
-	public void setTeacher(Teacher teacher) {
+	public void setTeacher(Integer teacher) {
 		this.teacher = teacher;
 	}
 

@@ -23,28 +23,14 @@
 		#{score}
 	</sql>
 	
-	<resultMap type="com.xh.springboot.model.Student" id="studentResultMap">  
-        <id column="id" property="id"/>  
-        <result column="name" property="name"/>  
-        <result column="age" property="age"/>  
-        <result column="sex" property="sex"/>  
-        <result column="score" property="score"/>  
-          
-        <!-- 多对一的关系 -->  
-        <collection property="teacher" ofType="com.xh.springboot.model.Teacher">  
-            <id column="id" property="id"/>  
-            <result column="name" property="name"/>  
-        </collection>  
-    </resultMap>  
-    
-	<select id="query" resultMap="studentResultMap">
+	<select id="query" resultType="student">
 		SELECT 
 			<include refid="field"></include>
 		FROM 
 			<include refid="tableName"></include>
 	</select>
 	
-	<select id="findById" parameterType="int" resultMap="studentResultMap">
+	<select id="findById" parameterType="int" resultType="student">
 		SELECT 
 			<include refid="field"></include>
 		FROM 
@@ -53,7 +39,7 @@
 			id=#{paramId}
 	</select>
 	
-	<!-- <insert id="add" parameterType="student" useGeneratedKeys="true" keyProperty="id">
+	<insert id="add" parameterType="student" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO 
 		<include refid="tableName"></include>
 		(teacher, name, age, sex, score)
@@ -78,5 +64,5 @@
 			score=#{score} 
 		WHERE 
 			id=#{id}
-	</update> -->
+	</update>
 </mapper>
