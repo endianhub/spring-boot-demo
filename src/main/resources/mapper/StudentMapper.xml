@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xh.springboot.dao.IStudentDao">
+
+	<sql id="tableName"> 
+		student 
+	</sql>
+	
+	<sql id="field"> 
+		id,
+		teacher,
+		name,
+		age,
+		sex,
+		score
+	</sql>
+	
+	<sql id="fieldValue">
+		#{teacher},
+		#{name},
+		#{age},
+		#{sex},
+		#{score}
+	</sql>
+	
+	<resultMap type="com.xh.springboot.model.Student" id="studentResultMap">  
+        <id column="id" property="id"/>  
+        <result column="name" property="name"/>  
+        <result column="age" property="age"/>  
+        <result column="sex" property="sex"/>  
+        <result column="score" property="score"/>  
+          
+        <!-- 多对一的关系 -->  
+        <collection property="teacher" ofType="com.xh.springboot.model.Teacher">  
+            <id column="id" property="id"/>  
+            <result column="name" property="name"/>  
+        </collection>  
+    </resultMap>  
+    
+	<select id="query" resultMap="studentResultMap">
+		SELECT 
+			<include refid="field"></include>
+		FROM 
+			<include refid="tableName"></include>
+	</select>
+	
+	<select id="findById" parameterType="int" resultMap="studentResultMap">
+		SELECT 
+			<include refid="field"></include>
+		FROM 
+			<include refid="tableName"></include>
+		WHERE 
+			id=#{paramId}
+	</select>
+	
+	<!-- <insert id="add" parameterType="student" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+		<include refid="tableName"></include>
+		(teacher, name, age, sex, score)
+		VALUES(<include refid="fieldValue"></include>)
+	</insert>
+	
+	<delete id="remove" parameterType="int">
+		DELETE FROM 
+			<include refid="tableName"></include>
+		WHERE 
+			id=#{paramId}
+	</delete>
+	
+	<update id="edit" parameterType="student">
+		UPDATE 
+			<include refid="tableName"></include>
+		SET 
+			teacher=#{teacher}, 
+			name=#{name}, 
+			age=#{age},
+			sex=#{sex},
+			score=#{score} 
+		WHERE 
+			id=#{id}
+	</update> -->
+</mapper>

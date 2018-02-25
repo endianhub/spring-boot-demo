@@ -3,7 +3,7 @@ package com.xh.springboot.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xh.springboot.model.User;
+import com.xh.springboot.model.Student;
 
 /**
  * <p>Title: Spring Boot HelloWorld案例</p>
@@ -17,9 +17,9 @@ import com.xh.springboot.model.User;
 public class BootController {
 
 	@RequestMapping("/getuser")
-	public User getUser() {
-		User user = new User();
-		user.setName("test");
-		return user;
+	public Student getUser() {
+		Student stu = new Student();
+		stu.setName("test");
+		return stu;
 	}
 }

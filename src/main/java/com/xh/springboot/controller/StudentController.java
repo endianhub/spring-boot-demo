@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xh.springboot.model.User;
-import com.xh.springboot.service.IUserService;
+import com.xh.springboot.model.Student;
+import com.xh.springboot.service.IStudentService;
 
 /**
  * <p>Title: </p>
@@ -20,32 +20,32 @@ import com.xh.springboot.service.IUserService;
  * @date 2018年2月24日
  */
 @RestController
-public class UserController {
+public class StudentController {
 
 	@Resource
-	private IUserService userService;
+	private IStudentService stuService;
 
 	@RequestMapping("/query")
 	@ResponseBody
-	public List<User> query() {
-		List<User> list = userService.query();
+	public List<Student> query() {
+		List<Student> list = stuService.query();
 		return list;
 	}
 
 	@RequestMapping("/findById")
 	@ResponseBody
-	public User findById(Integer paramId) {
-		User user = userService.findById(paramId);
-		return user;
+	public Student findById(Integer paramId) {
+		Student stu = stuService.findById(paramId);
+		return stu;
 	}
 
 	@RequestMapping("/add")
 	public int add() {
-		User user = new User();
-		user.setName("张三");
-		user.setAge(12);
+		Student stu = new Student();
+		stu.setName("张三");
+		stu.setAge(12);
 
-		int keyId = userService.add(user);
+		int keyId = stuService.add(stu);
 		return keyId;
 	}
 

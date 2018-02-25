@@ -2,7 +2,7 @@ package com.xh.springboot.dao;
 
 import java.util.List;
 
-import com.xh.springboot.model.User;
+import com.xh.springboot.model.Student;
 
 /**
 * <p>Title: </p>
@@ -12,15 +12,15 @@ import com.xh.springboot.model.User;
 * @QQ 1033542070
 * @date 2018年2月24日
 */
-public abstract interface IUserDao {
+public abstract interface IStudentDao {
 
-	abstract List<User> query();
+	abstract List<Student> query();
 
-	abstract User findById(Integer paramId);
+	abstract Student findById(Integer paramId);
 
-	abstract int add(User user);
+	abstract int add(Student stu);
 
 	abstract int remove(Integer paramId);
 
-	abstract int edit(User user);
+	abstract int edit(Student stu);
 }

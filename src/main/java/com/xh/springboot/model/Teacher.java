@@ -6,19 +6,18 @@ package com.xh.springboot.model;
 * 
 * @author H.Yang
 * @QQ 1033542070
-* @date 2018年2月24日
+* @date 2018年2月25日
 */
-public class User {
+public class Teacher {
 
-	private int id;
+	private Integer id;
 	private String name;
-	private int age;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -30,12 +29,9 @@ public class User {
 		this.name = name;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", name=" + name + "]";
 	}
 
 }

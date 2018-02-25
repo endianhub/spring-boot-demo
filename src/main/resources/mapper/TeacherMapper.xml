@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xh.springboot.dao.ITeacherDao">
+
+	<sql id="tableName"> 
+		teacher 
+	</sql>
+	
+	<sql id="field"> 
+		id,
+		name
+	</sql>
+	
+	<sql id="fieldValue">
+		#{name}
+	</sql>
+
+	<select id="query" resultType="teacher">
+		SELECT 
+			<include refid="field"></include>
+		FROM 
+			<include refid="tableName"></include>
+	</select>
+	
+	<select id="findById" parameterType="int" resultType="teacher">
+		SELECT 
+			<include refid="field"></include>
+		FROM 
+			<include refid="tableName"></include>
+		WHERE 
+			id=#{paramId}
+	</select>
+	
+	<insert id="add" parameterType="teacher" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+		<include refid="tableName"></include>
+		( name )
+		VALUES(<include refid="fieldValue"></include>)
+	</insert>
+	
+	<delete id="remove" parameterType="int">
+		DELETE FROM 
+			<include refid="tableName"></include>
+		WHERE 
+			id=#{paramId}
+	</delete>
+	
+	<update id="edit" parameterType="teacher">
+		UPDATE 
+			<include refid="tableName"></include>
+		SET 
+			name=#{name}
+		WHERE 
+			id=#{id}
+	</update>
+</mapper>
