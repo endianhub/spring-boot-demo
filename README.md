@@ -15,11 +15,14 @@ spring-boot-starter：核心模块，包括自动配置支持、日志和YAML<br
 spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito<br>
 spring-boot-starter-web：引入Web模块<br>
 
+
+<br><br>
+
 如果想访问JSP页面，需添加以下两个jar包：<br>
 spring-boot-starter-tomcat<br>
 tomcat-embed-jasper<br>
 
----
+
 
 SpringBoot中通过SpringBootServletInitializer如何实现容器初始化
 
@@ -29,6 +32,8 @@ SpringBoot中通过SpringBootServletInitializer如何实现容器初始化
 并实现了MVC的设计模式
 
 
+<br><br><br>
 
+---
 
-如有不足或新的想法请留言--分享知识 传递快乐。
+ **如有不足或新的想法请留言--分享知识 传递快乐。** 
