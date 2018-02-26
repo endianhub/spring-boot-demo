@@ -1,3 +1,5 @@
+# 传送知识 分享快乐
+
 ### 特点编辑
 1. 创建独立的Spring应用程序<br>
 2. 嵌入的Tomcat，无需部署WAR文件<br>
@@ -12,7 +14,12 @@ spring-boot-starter：核心模块，包括自动配置支持、日志和YAML<br
 spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito<br>
 spring-boot-starter-web：引入Web模块<br>
 
+如果想访问JSP页面，需添加以下两个jar包：<br>
+spring-boot-starter-tomcat<br>
+tomcat-embed-jasper<br>
+
 ---
+
 SpringBoot中通过SpringBootServletInitializer如何实现容器初始化
 
 继承SpringBootServletInitializer方可正常部署至常规tomcat下，其主要能够起到web.xml的作用。
