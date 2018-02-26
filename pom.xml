@@ -38,6 +38,18 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>1.5.9.RELEASE</version>
 		</dependency>
+		<!--添加对tomcat的支持-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<version>1.5.9.RELEASE</version>
+		</dependency>
+		<!--添加对jsp的支持-->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>8.5.20</version>
+		</dependency>
 
 		<!-- 使用连接池 -->
 		<dependency>
