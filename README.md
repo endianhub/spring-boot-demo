@@ -1,5 +1,6 @@
 # 分享知识 传递快乐
 
+
 ### 特点编辑
 1. 创建独立的Spring应用程序<br>
 2. 嵌入的Tomcat，无需部署WAR文件<br>
@@ -27,3 +28,7 @@ SpringBoot中通过SpringBootServletInitializer如何实现容器初始化
 
 并实现了MVC的设计模式
 
+
+
+
+如有不足或新的想法请留言--分享知识 传递快乐。
