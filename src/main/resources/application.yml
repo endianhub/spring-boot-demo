@@ -1,5 +1,6 @@
 server:  
   port: 8080
+  context-path: /spring-boot-demo
 
 
 #激活哪一个环境的配置文件，默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
@@ -39,11 +40,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-  mvc:
-    view:
-      prefix: /WEB-INF/view/
-      suffix: .jsp
-
 
 ---
 

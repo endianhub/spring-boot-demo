@@ -32,6 +32,9 @@ SpringBoot中通过SpringBootServletInitializer如何实现容器初始化
 并实现了MVC的设计模式
 
 
+application.yml和application.properties二选一
+
+
 <br><br><br>
 
 ---

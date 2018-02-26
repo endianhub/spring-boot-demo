@@ -8,47 +8,42 @@
 	<name>spring-boot-demo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-
-		<!-- spring boot -->
-		<!-- spring-boot-starter：核心模块，包括自动配置支持、日志和YAML -->
-		<!-- spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito -->
-		<!-- 引入Web模块，需添加spring-boot-starter-web模块： -->
+		<!-- 核心模块，包括自动配置支持、日志和YAML -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-			<version>1.5.7.RELEASE</version>
+			<version>${spring-boot.version}</version>
 		</dependency>
+		<!-- 测试模块，包括JUnit、Hamcrest、Mockito -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>1.5.9.RELEASE</version>
-			<scope>test</scope>
+			<version>${spring-boot.version}</version>
 		</dependency>
+		<!-- 引入Web模块 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>1.5.9.RELEASE</version>
+			<version>${spring-boot.version}</version>
 		</dependency>
-		<!--添加对tomcat的支持-->
+		<!--添加对tomcat的支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<version>1.5.9.RELEASE</version>
+			<version>${spring-boot.version}</version>
+			<scope>provided</scope>
 		</dependency>
-		<!--添加对jsp的支持-->
+		<!-- 默认的模板引擎 -->
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>8.5.20</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>${spring-boot.version}</version>
 		</dependency>
 
 		<!-- 使用连接池 -->
