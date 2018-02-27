@@ -22,7 +22,7 @@ spring:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/test
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: admini
     driver-class-name: com.mysql.jdbc.Driver
